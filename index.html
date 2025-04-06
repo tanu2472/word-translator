@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>word tranlator</title>
+    <style>
+    .header{
+        background-color: antiquewhite;
+            }
+    
+    </style>
+</head>
+<body>
+    <h1 class="header"> *Word Translator *</h1>
+    <input type="text" id="word" placeholder="Enter the word"/>
+    <button onclick="doTranslate()">Translate</button>
+    <h2 id="translation"> </h2>
+    <script>
+        const englishToMarathi = {
+            hi:"नमस्कार",
+            hello:"हॅलो",
+            "good morning":"सुप्रभात",
+            "good evening":"शुभ संध्याकाळ",
+            time:"वेळ",
+            "good night":"शुभ रात्री",
+            book:"पुस्तक",
+            my:"माझे",
+            love:"प्रेम",
+            tanvi:"तन्वी",
+            bye:"बाय",
+            marathi:"मराठी"
+        };
+        function doTranslate(){
+            const wordElement = document.getElementById("word");
+            const translationElement = document.getElementById("translation");
+
+            const word = wordElement.value.toLowerCase();            
+            const translation = englishToMarathi[word];
+            
+           if(translation){
+            translationElement.innerText = `${word} in marathi is ${translation}`;
+           }else{
+            translationElement.innerText =`Translation not Found for ${word}`;
+           }
+          
+        }
+        
+           </script>
+</body>
+</html>
